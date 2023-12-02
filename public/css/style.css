@@ -79,6 +79,10 @@ section {
   background-color: var(--red);
 }
 
+.btn.orange {
+  background-color: var(--orange);
+}
+
 .btn:hover {
   background-color: var(--black);
 }
@@ -119,7 +123,16 @@ section {
   text-transform: uppercase;
 }
 
-/* REGISTER/LOGIN */
+.empty {
+  font-size: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+  border: var(--border);
+  background-color: var(--white);
+  color: var(--red);
+}
+
+/* PRODUCTS/REGISTER/LOGIN */
 .form-container {
   display: flex;
   align-items: center;
@@ -168,6 +181,13 @@ section {
   color: var(--purple);
 }
 
+.form-container img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
 /* DASHBOARD */
 .dashboard .box-container {
   display: grid;
@@ -197,6 +217,43 @@ section {
   padding: 1.5rem;
   margin-top: 1.5rem;
   background-color: var(--white);
+}
+
+/* ADMIN PRODUCTS */
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 30rem);
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.product-container .box {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  background-color: var(--white);
+}
+
+.product-container .box img {
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.product-container .box span {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--black);
+}
+
+.product-container .box span:last-of-type {
+  font-size: 1.4rem;
+  color: var(--red);
 }
 
 /* ADMIN HEADER */

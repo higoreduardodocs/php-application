@@ -99,33 +99,13 @@ if (isset($_GET['delete'])) {
   <section>
     <h1 class="title">Shop products</h1>
     <div class="form-container">
-      <?php
-        if (isset($_GET['update'])) {
-          $update_id = $_GET['update'];
-          $update_query = mysqli_query($conn, "SELECT * FROM `products` WHERE id = '$update_id'") or die('query failed');
-          if(mysqli_num_rows($update_query) > 0) {
-            while($fetch_update = mysqli_fetch_assoc($update_query)) {
-      ?>
-        <form method="post" class="add-products" enctype="multipart/form-data">
-          <h3>Update product</h3>
-          <input type="text" name="name" placeholder="Enter product name" value="<?php echo $fetch_update['name']; ?>" required class="box" />
-          <input type="number" min="0" name="price" placeholder="Enter product price" value="<?php echo $fetch_update['price']; ?>" required class="box" />
-          <img src="../uploaded_img/<?php echo $fetch_update['image']; ?>" alt="<?php echo $fetch_update['name']; ?>" />
-          <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" class="box" />
-          <input type="submit" name="update" value="Update" class="btn purple" />
-          <input type="reset" name="cancel" value="Cancel" class="btn red" />
-          <input type="hidden" name="id" value="<?php echo $fetch_update['id']; ?>">
-          <input type="hidden" name="old_image" value="<?php echo $fetch_update['image']; ?>">
-        </form>
-      <?php }}} else { ?>
-        <form method="post" class="add-products" enctype="multipart/form-data">
-          <h3>Add product</h3>
-          <input type="text" name="name" placeholder="Enter product name" required class="box" />
-          <input type="number" min="0" name="price" placeholder="Enter product price" required class="box" />
-          <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" required class="box" />
-          <input type="submit" name="add" value="Add product" class="btn purple" />
-        </form>
-      <?php } ?>
+      <form method="post" class="add-products" enctype="multipart/form-data">
+        <h3>Add product</h3>
+        <input type="text" name="name" placeholder="Enter product name" required class="box" />
+        <input type="number" min="0" name="price" placeholder="Enter product price" required class="box" />
+        <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" required class="box" />
+        <input type="submit" name="add" value="Add product" class="btn purple" />
+      </form>
     </div>
   </section>
 
@@ -150,6 +130,33 @@ if (isset($_GET['delete'])) {
         }
       ?>
     </div>
+  </section>
+
+  <section class="modal">
+    <?php
+      if (isset($_GET['update'])) {
+        $update_id = $_GET['update'];
+        $update_query = mysqli_query($conn, "SELECT * FROM `products` WHERE id = '$update_id'") or die('query failed');
+        if(mysqli_num_rows($update_query) > 0) {
+          while($fetch_update = mysqli_fetch_assoc($update_query)) {
+    ?>
+    <div class="form-container">
+      <form method="post" class="add-products" enctype="multipart/form-data">
+        <img src="../uploaded_img/<?php echo $fetch_update['image']; ?>" alt="<?php echo $fetch_update['name']; ?>" />
+        <input type="text" name="name" placeholder="Enter product name" value="<?php echo $fetch_update['name']; ?>" required class="box" />
+        <input type="number" min="0" name="price" placeholder="Enter product price" value="<?php echo $fetch_update['price']; ?>" required class="box" />
+        <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" class="box" />
+        <input type="submit" name="update" value="Update" class="btn purple" />
+        <input type="reset" name="cancel" value="Cancel" class="btn red" onclick="location.replace('./products.php')" />
+        <input type="hidden" name="id" value="<?php echo $fetch_update['id']; ?>" />
+        <input type="hidden" name="old_image" value="<?php echo $fetch_update['image']; ?>" />
+      </form>
+    </div>
+    <?php
+      }}} else {
+        echo '<script>document.querySelector(".modal").style.display = "none";</script>';
+      }
+    ?>
   </section>
 
   <script src="../js/script.js"></script>

@@ -1,4 +1,16 @@
 <header class="admin-header">
+  <?php
+    if (isset($message)) {
+      foreach($message as $msg) {
+        echo '
+        <div class="message">
+          <span>'.$msg.'</span>
+          <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+        </div>
+        ';
+      }
+    }
+  ?>
   <div>
     <a href="./home.php" class="logo">Admin <span>Panel</span></a>
 

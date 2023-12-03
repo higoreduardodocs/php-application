@@ -147,6 +147,42 @@ section {
   z-index: 3;
 }
 
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 30rem);
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.box-container .box {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  background-color: var(--white);
+}
+
+.box-container .box img {
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.box-container .box p {
+  text-align: left;
+  font-size: 1.4rem;
+  color: var(--light-color);
+  margin-top: 1.5rem;
+}
+
+.box-container .box p span {
+  color: var(--purple);
+}
+
 /* PRODUCTS/REGISTER/LOGIN */
 .form-container {
   display: flex;
@@ -235,40 +271,25 @@ section {
 }
 
 /* ADMIN PRODUCTS */
-.product-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 30rem);
-  justify-content: center;
-  gap: 1.5rem;
-  max-width: 120rem;
-  margin: 0 auto;
-  align-items: flex-start;
-}
-
-.product-container .box {
-  text-align: center;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  box-shadow: var(--box-shadow);
-  background-color: var(--white);
-}
-
-.product-container .box img {
-  height: 20rem;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 0.5rem;
-}
-
-.product-container .box span {
+.box-container .box span.product-detail {
   display: block;
   font-size: 1.8rem;
   color: var(--black);
 }
 
-.product-container .box span:last-of-type {
+.box-container .box span.product-detail:last-of-type {
   font-size: 1.4rem;
   color: var(--red);
+}
+
+/* ADMIN ORDERS */
+.orders .box-container .box .form-container {
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.orders .box-container .box .form-container form {
+  padding: 0;
 }
 
 /* ADMIN HEADER */

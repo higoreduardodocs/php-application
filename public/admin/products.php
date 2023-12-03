@@ -111,7 +111,7 @@ if (isset($_GET['delete'])) {
 
   <section>
     <h1 class="title">Product list</h1>
-    <div class="product-container">
+    <div class="box-container">
       <?php
         $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
         if (mysqli_num_rows($select_products) > 0) {
@@ -119,8 +119,8 @@ if (isset($_GET['delete'])) {
       ?>
       <div class="box">
         <img src="../uploaded_img/<?php echo $fetch_products['image']; ?>" alt="<?php echo $fetch_products['name']; ?>" />
-        <span><?php echo $fetch_products['name']; ?></span>
-        <span>$<?php echo $fetch_products['price']; ?></span>
+        <span class="product-detail"><?php echo $fetch_products['name']; ?></span>
+        <span class="product-detail">$<?php echo $fetch_products['price']; ?></span>
         <a href="./products.php?update=<?php echo $fetch_products['id']; ?>" class="btn orange">Update</a>
         <a href="./products.php?delete=<?php echo $fetch_products['id']; ?>" class="btn red">Delete</a>
       </div>

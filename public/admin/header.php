@@ -30,7 +30,7 @@
     <div class="account-box">
       <p>User: <span><?php echo $_SESSION['admin_name']; ?></span></p>
       <p>Email: <span><?php echo $_SESSION['admin_email']; ?></span></p>
-      <a href="" class="btn red">Logout</a>
+      <a href="../logout.php" class="btn red">Logout</a>
     </div>
   </div>
 </header>

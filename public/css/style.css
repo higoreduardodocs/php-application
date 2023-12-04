@@ -203,6 +203,38 @@ section {
   padding: 1rem;
 }
 
+.heading {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 30vh;
+  background: url(../images/heading-bg.webp) no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.heading h3 {
+  font-size: 5rem;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.heading p {
+  font-size: 2.5rem;
+  color: var(--light-color);
+}
+
+.heading p a {
+  color: var(--purple);
+}
+
+.heading p a:hover {
+  text-decoration: underline;
+}
+
 /* PRODUCTS/REGISTER/LOGIN */
 .form-container {
   display: flex;
@@ -536,6 +568,29 @@ section {
   line-height: 1.5;
 }
 
+.home-contact {
+  background-color: var(--black);
+}
+
+.home-contact .content {
+  max-width: 60rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.home-contact .content h3 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.home-contact .content p {
+  color: var(--light-white);
+  font-size: 1.4rem;
+  padding: 1rem 0;
+}
+
+/* ABOUT */
 .about {
   display: flex;
   align-items: center;
@@ -571,26 +626,70 @@ section {
   padding: 1rem 0;
 }
 
-.home-contact {
+.reviews {
+  background-color: var(--light-bg);
+}
+
+.reviews .box-container,
+.authors .box-container {
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
+
+.reviews .box-container .box img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+}
+
+.reviews .stars {
+  display: inline-block;
+  background-color: var(--light-bg);
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.reviews .stars i {
+  font-size: 1rem;
+  color: var(--orange);
+  margin: 0.2rem;
+}
+
+.reviews h3,
+.authors h3 {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.authors .box {
+  overflow: hidden;
+}
+
+.authors .share {
+  position: absolute;
+  top: 0;
+  left: -10rem;
+}
+
+.authors .box:hover .share {
+  left: 1rem;
+}
+
+.authors .share a {
+  height: 3rem;
+  width: 3rem;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  background-color: var(--white);
+  border: var(--border);
+  display: block;
+  margin-top: 1rem;
+  color: var(--black);
+}
+
+.authors .share a:hover {
   background-color: var(--black);
-}
-
-.home-contact .content {
-  max-width: 60rem;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.home-contact .content h3 {
-  font-size: 3rem;
-  text-transform: uppercase;
   color: var(--white);
-}
-
-.home-contact .content p {
-  color: var(--light-white);
-  font-size: 1.4rem;
-  padding: 1rem 0;
 }
 
 /* MEDIA QUERIES */

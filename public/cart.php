@@ -79,7 +79,7 @@ if (isset($_GET['delete_all'])) {
    <div class="cart-total">
       <p>Total: <span>$<?php echo $total; ?></span></p>
       <a href="./shop.php" class="btn purple">Continue shopping</a>
-      <a href="./checkout.php" class="btn <?php echo ($total > 1)?'':'disabled'; ?>">Proceed to checkout</a>
+      <a href="./checkout.php" class="btn orange <?php echo ($total > 1)?'':'disabled'; ?>">Proceed to checkout</a>
    </div>
   </section>
 

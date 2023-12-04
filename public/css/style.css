@@ -50,6 +50,10 @@ body {
   background-color: var(--purple);
 }
 
+textarea {
+  resize: none;
+}
+
 /* HELPERS */
 @keyframes fadeIn {
   0% {

@@ -43,7 +43,7 @@ if (isset($_GET['delete'])) {
       <p>Name: <span><?php echo $fetch_message['name']; ?></span></p>
       <p>Number: <span><?php echo $fetch_message['number']; ?></span></p>
       <p>Email: <span><?php echo $fetch_message['email']; ?></span></p>
-      <p>Message: <span><?php echo $fetch_message['mesage']; ?></span></p>
+      <p>Message: <span><?php echo $fetch_message['message']; ?></span></p>
       <a href="./messages.php?delete=<?php echo $fetch_message['id']; ?>" onclick="return confirm('Delete this message?');" class="btn red">Delete</a>
    </div>
     <?php

@@ -21,6 +21,16 @@
 <summary>:ledger: Banco de dados</summary>
 
 ```
+  docker exec -it <sevice-name> bash
+  mysql -u<user-name> -p<password>
+  show databases;
+  use <database-name>;
+  show tables;
+  describe <table-name>;
+  docker inspect <service-name> | grep IPAddress
+```
+
+```
   CREATE TABLE IF NOT EXISTS users (
     `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `name` VARCHAR(100) NOT NULL,

@@ -1,6 +1,30 @@
 <?php
 
 include './config.php';
+session_start();
+
+if(isset($_POST['add_cart'])) {
+
+  $user_id = $_SESSION['user_id'];
+
+  if (!isset($user_id)) {
+    header('location:./login.php');
+  }
+
+  $name = $_POST['name'];
+  $price = $_POST['price'];
+  $quantity = $_POST['quantity'];
+  $image = $_POST['image'];
+
+  $check_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$name' AND user_id = '$user_id'") or die('query failed');
+
+  if (mysqli_num_rows($check_cart) > 0) {
+    $message[] = 'Already added to cart!';
+  } else {
+    mysqli_query($conn, "INSERT INTO `cart` (user_id, name, price, quantity, image) VALUES ('$user_id', '$name', '$price', '$quantity', '$image')") or die('query failed');
+    $message[] = 'Product added to cart';
+  }
+}
 
 ?>
 

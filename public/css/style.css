@@ -788,6 +788,15 @@ section {
   width: 25%;
 }
 
+/* PLACED ORDERS */
+.placed-orders .box-container {
+  display: flex;
+}
+
+.placed-orders .box-container .box {
+  flex: 1 1 40rem;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 992px) {
   html,

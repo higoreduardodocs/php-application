@@ -788,11 +788,18 @@ section {
   width: 25%;
 }
 
-/* PLACED ORDERS */
+/* ORDERS/PLACED ORDERS/USERS/MESSAGES */
+.messages .box-container,
+.users .box-container,
+.orders .box-container,
 .placed-orders .box-container {
   display: flex;
+  flex-wrap: wrap;
 }
 
+.users .box-container .box,
+.messages .box-container .box,
+.orders .box-container .box,
 .placed-orders .box-container .box {
   flex: 1 1 40rem;
 }

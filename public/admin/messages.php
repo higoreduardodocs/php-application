@@ -30,7 +30,7 @@ if (isset($_GET['delete'])) {
 <body>
   <?php include './header.php'; ?>
 
-  <section>
+  <section class="messages">
     <h1 class="title">Messages</h1>
     <div class="box-container">
     <?php

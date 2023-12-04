@@ -1,5 +1,6 @@
 <header class="header">
   <?php
+    $user_id = $_SESSION['user_id'];
     if (isset($message)) {
       foreach($message as $msg) {
         echo '
@@ -39,14 +40,18 @@
         <i id="menu-btn" class="fas fa-bars"></i>
         <a href="./search.php"><i class="fas fa-search"></i></a>
         <i id="account-btn" class="fas fa-users"></i>
+        <?php
+          $select_cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+          $cart_rows_number = mysqli_num_rows($select_cart_number); 
+        ?>
         <a href="./cart.php">
           <i class="fas fa-shopping-cart"></i>
-          <span>3</span>
+          <span>(<?php echo $cart_rows_number; ?>)</span>
         </a>
       </div>
       <div class="account-box">
-        <p>User: <span><?php echo $_SESSION['name']; ?></span></p>
-        <p>Email: <span><?php echo $_SESSION['email']; ?></span></p>
+        <p>User: <span><?php echo $_SESSION['user_name']; ?></span></p>
+        <p>Email: <span><?php echo $_SESSION['user_email']; ?></span></p>
         <a href="./logout.php" class="btn red">Logout</a>
       </div>
     </div>

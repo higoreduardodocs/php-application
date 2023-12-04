@@ -89,6 +89,12 @@ section {
   background-color: var(--orange);
 }
 
+.btn.disabled {
+  pointer-events: none;
+  opacity: .5;
+  user-select: none;
+}
+
 .btn:hover {
   background-color: var(--black);
 }

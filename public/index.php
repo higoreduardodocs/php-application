@@ -35,7 +35,7 @@ include './config.php';
       <form method="post" class="box">
         <img src="./uploaded_img/<?php echo $fetch_products['image']; ?>" alt="<?php echo $fetch_products['name']; ?>" />
         <span class="product-detail"><?php echo $fetch_products['name']; ?></span>
-        <span class="product-detail">$<?php echo $fetch_products['price']; ?></span>
+        <span class="price">$<?php echo $fetch_products['price']; ?></span>
         <input type="number" min="1" value="1" name="quantity" required class="cart-quantity" />
         <input type="hidden" name="name" value="<?php echo $fetch_products['name']; ?>" />
         <input type="hidden" name="price" value="<?php echo $fetch_products['price']; ?>" />

@@ -160,6 +160,7 @@ section {
 }
 
 .box-container .box {
+  position: relative;
   text-align: center;
   padding: 2rem;
   border-radius: 0.5rem;
@@ -168,10 +169,8 @@ section {
 }
 
 .box-container .box img {
-  height: 20rem;
+  height: 30rem;
   width: 100%;
-  object-fit: cover;
-  border-radius: 0.5rem;
 }
 
 .box-container .box p {
@@ -185,12 +184,23 @@ section {
   color: var(--purple);
 }
 
-.cart-quantity {
+.box-container .box .cart-quantity {
   width: 100%;
   padding: 1.2rem 1.4rem;
   border-radius: 0.5rem;
   margin: 1rem 0;
   background-color: var(--light-bg);
+}
+
+.box-container .box .price {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2.5rem;
+  color: var(--white);
+  background-color: var(--red);
+  border-radius: 0.5rem;
+  padding: 1rem;
 }
 
 /* PRODUCTS/REGISTER/LOGIN */

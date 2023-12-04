@@ -49,11 +49,15 @@
           <span>(<?php echo $cart_rows_number; ?>)</span>
         </a>
       </div>
+      <?php
+       if (isset($user_id)) {
+      ?>
       <div class="account-box">
         <p>User: <span><?php echo $_SESSION['user_name']; ?></span></p>
         <p>Email: <span><?php echo $_SESSION['user_email']; ?></span></p>
         <a href="./logout.php" class="btn red">Logout</a>
       </div>
+      <?php } ?>
     </div>
   </div>
 </header>
